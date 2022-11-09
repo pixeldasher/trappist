@@ -1,6 +1,6 @@
 <IfModule mod_headers.c>
     AddDefaultCharset UTF-8
-	AddCharset UTF-8 *
+	AddCharset UTF-8 *.*
     DefaultLanguage de-DE
 	Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
 	Header always set X-Frame-Options "deny"
@@ -12,11 +12,5 @@
     Header always set Cross-Origin-Opener-Policy "same-origin"
     Header always set Cross-Origin-Resource-Policy "same-origin"
     Header always set Permissions-Policy "autoplay=(self), fullscreen=(self)"
-    Header always set Cache-Control "max-age=31536000, immutable"
+    Header always set Cache-Control "no-cache"
 </IfModule>
-
-
-RewriteEngine on
-RewriteCond %{HTTP_REFERER} !^$
-RewriteCond %{HTTP_REFERER} !^https://pxld.sh [NC]
-RewriteRule \.(js|css|xml|json|txt|ico|htaccess|woff2|svg|png|webp)$ - [F,NC,L]

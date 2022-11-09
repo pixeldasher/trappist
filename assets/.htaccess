@@ -1,0 +1,5 @@
+<IfModule mod_headers.c>
+    Header always unset Content-Security-Policy
+    Header always unset Cache-Control
+    Header always set Cache-Control "max-age=31536000, immutable"
+</IfModule>
