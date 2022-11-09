@@ -7,12 +7,29 @@
 		<meta name="description" content="trappi.st">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 
-		<title>trappist</title>
+		<title>trappi.st</title>
 
-		<link rel="preload" as="style" href="./assets/css/base.css">
-		<link rel="stylesheet" href="./assets/css/base.css">
-		<link rel="preload" as="script" href="./assets/js/main.js">
-		<script defer src="./assets/js/main.js"></script>
+		<style>
+			* {
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+			}
+
+			html,
+			body,
+			#content {
+				width: 100%;
+				height: 100%;
+			}
+
+			#content {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+		</style>
+
 		<link rel="icon" href="./favicon.ico" sizes="any">
 	</head>
 
@@ -21,9 +38,33 @@
 		</header>
 
 		<main>
-			<p id="content">
+			<div id="content">
 				<p>trappi.st</p>
 			</div>
 		</main>
+
+		<script>
+			!(function () {
+				// Enable strict mode
+				"use strict";
+
+				/**
+				 * @type {Function} Main function
+				 * @param {Window} _w Window object
+				 * @param {Document} _d Document object
+				 * @param {HTMLElement} _r Root element object
+				 * @param {HTMLElement} _b Root element object
+				 */
+				const main = function (_w, _d, _r, _b) {
+					console.log("trappi.st");
+				};
+
+				// Run main function when DOM is loaded
+				main(window, document, document.documentElement, document.body);
+
+				// End of script
+				return 0;
+			})();
+		</script>
 	</body>
 </html>
