@@ -1,5 +1,7 @@
 <IfModule mod_headers.c>
-	AddCharset UTF-8 .html
+    AddDefaultCharset UTF-8
+	AddCharset UTF-8 *
+    DefaultLanguage de-DE
 	Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
 	Header always set X-Frame-Options "deny"
 	Header always set X-Content-Type-Options "nosniff"
@@ -10,7 +12,7 @@
     Header always set Cross-Origin-Opener-Policy "same-origin"
     Header always set Cross-Origin-Resource-Policy "same-origin"
     Header always set Permissions-Policy "autoplay=(self), fullscreen=(self)"
-    Header always set Cache-Control "max-age=31536000"
+    Header always set Cache-Control "max-age=0"
 </IfModule>
 
 
