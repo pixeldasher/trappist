@@ -19,13 +19,12 @@ jobs:
     name: Deploy Website Every Commit
     runs-on: ubuntu-latest
     steps:
-    - name: Get Latest Code
-      uses: actions/checkout@v3
+    - name: Get latest code
+      uses: actions/checkout@v2
     
-    - name: Sync Files
-      uses: SamKirkland/web-deploy@v1
+    - name: Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.3.2
       with:
-        target-server: ${{ secrets.SERVER }}
-        remote-user: ${{ secrets.USER }}
-        private-ssh-key: ${{ secrets.SSH_KEY }}
-        destination-path: ~/../home/trappi/public_html/
+        server: ${{ secrets.SERVER }}
+        username: ${{ secrets.USER }}
+        password: ${{ secrets.PASS }}
