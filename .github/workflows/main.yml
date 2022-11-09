@@ -28,9 +28,5 @@ jobs:
         target-server: ${{ secrets.SERVER }}
         remote-user: ${{ secrets.USER }}
         private-ssh-key: ${{ secrets.PASS }}
+        ssh-port: 22
         destination-path: ~/../home/trappi/public_html/
-        exclude: |
-          .gitignore
-          **/.git*
-          **/.git*/**
-          **/node_modules/**
