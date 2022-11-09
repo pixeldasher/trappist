@@ -2,6 +2,7 @@
 	AddCharset UTF-8 .html
 	Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
 	Header always set X-Frame-Options "deny"
+    Header always set X-XSS-Protection "1; mode=block"
 	Header always set X-Content-Type-Options "nosniff"
     Header always set Content-Security-Policy "default-src 'none'; style-src 'self'; script-src 'self'; img-src 'self'"
     Header always set X-Permitted-Cross-Domain-Policies "none"
@@ -10,6 +11,7 @@
     Header always set Cross-Origin-Opener-Policy "same-origin"
     Header always set Cross-Origin-Resource-Policy "same-origin"
     Header always set Permissions-Policy "autoplay=(self),fullscreen=(self)"
+    Header always set Feature-Policy "autoplay=(self),fullscreen=(self)"
     Header always set Cache-Control "max-age=31536000"
     Header always set Pragma "no-cache"
     Header always set Expect-CT "max-age=31536000; https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
