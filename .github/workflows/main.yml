@@ -28,3 +28,10 @@ jobs:
         server: ${{ secrets.SERVER }}
         username: ${{ secrets.USER }}
         password: ${{ secrets.PASS }}
+        protocol: ftps
+        port: 22
+        exclude: |
+          .gitignore
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
