@@ -20,16 +20,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Get latest code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
     
     - name: Sync files
-      uses: SamKirkland/FTP-Deploy-Action@4.3.2
+      uses: SamKirkland/web-deploy@v1
       with:
-        server: ${{ secrets.SERVER }}
-        username: ${{ secrets.USER }}
-        password: ${{ secrets.PASS }}
-        protocol: ftps
-        port: 22
+        target-server: ${{ secrets.SERVER }}
+        remote-user: ${{ secrets.USER }}
+        private-ssh-key: ${{ secrets.PASS }}
+        destination-path: ~/../home/trappi/public_html/
         exclude: |
           .gitignore
           **/.git*
