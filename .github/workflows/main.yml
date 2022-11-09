@@ -1,0 +1,31 @@
+# Simple workflow for deploying static content to GitHub Pages
+name: Deploy static content to Pages
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  web-deploy:
+    name: Deploy Website Every Commit
+    runs-on: ubuntu-latest
+    steps:
+    - name: Get Latest Code
+      uses: actions/checkout@v3
+    
+    - name: Sync Files
+      uses: SamKirkland/web-deploy@v1
+      with:
+        target-server: ${{ secrets.SERVER }}
+        remote-user: ${{ secrets.USER }}
+        private-ssh-key: ${{ secrets.SSH_KEY }}
+        destination-path: ~/../home/trappi/public_html/
