@@ -7,7 +7,9 @@
 		<meta name="description" content="trappi.st">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="color-scheme" content="dark">
-		<meta name="theme-color" content="rgb(5.1% 6.7% 9%)">
+
+		<link rel="dns-prefetch" href="https//pxld.sh">
+		<link rel="preconnect" href="https//pxld.sh">
 
 		<title>trappi.st</title>
 
@@ -18,7 +20,6 @@
 				--text-rgb: 83.8% 87% 90.1%;
 				--text-color: rgb(var(--text-rgb));
 				color-scheme: dark;
-				scrollbar-width: thin;
 			}
 			::selection {
 				background-color: rgb(var(--text-rgb) / 15%);
@@ -37,16 +38,27 @@
 				display: flex;
 				justify-content: center;
 				align-items: center;
-			}
-			h1 {
-				color: var(--text-color);
+				flex-direction: column;
+				padding: 2rem;
 				font-size: clamp(2rem, 1.2rem + 3.2vw, 4rem);
 				line-height: 1;
-				font-weight: bolder;
 				font-family: sans-serif;
-				text-transform: uppercase;
-				padding: 2rem;
+			}
+			main > * {
 				max-width: 100vw;
+				font-size: 1em;
+				color: var(--text-color);
+			}
+			h1 {
+				font-weight: bolder;
+				text-transform: uppercase;
+			}
+			p {
+				font-size: 0.375em;
+				opacity: 0.5;
+			}
+			a {
+				color: inherit !important;
 			}
 		</style>
 
@@ -56,6 +68,7 @@
 	<body>
 		<main>
 			<h1>trappi.st</h1>
+			<p>by <a href="https://pxld.sh" target="_blank" title="Open link in new tab">pixeldasher</a></p>
 		</main>
 
 		<script>
