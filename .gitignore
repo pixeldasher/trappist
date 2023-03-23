@@ -1,0 +1,34 @@
+# apache conf files
+.ht*
+
+# typo3
+typo3
+typo3temp
+typo3cms
+index.php
+typo3_src*
+!typo3conf
+typo3conf/*
+!typo3conf/ext
+!typo3conf/sites
+
+# typo3 fileadmin
+!fileadmin
+fileadmin/*
+!fileadmin/form_definitions
+
+# editor
+.nova
+!.vscode
+.vscode/*
+!.vscode/sftp.json
+
+# npm
+node_modules
+package-lock.json
+
+# github
+.github
+
+# other
+.DS_Store
