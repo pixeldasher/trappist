@@ -286,9 +286,6 @@ void (() => {
 					elementAnimateIOCount++;
 				}
 			});
-
-			// end of scope
-			return 0;
 		})(); /**/
 
 		/** Add parallax effect to certain media elements */
