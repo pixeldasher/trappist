@@ -1,3 +1,7 @@
+/* set charset */
+@charset "UTF-8";
+
+/* css imports */
 @import url("./reset.css");
 @import url("./constants.css");
 @import url("./overwrites.css");

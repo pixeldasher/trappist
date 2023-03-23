@@ -5,16 +5,8 @@
 @font-face {
 	font-style: normal;
 	font-weight: 200 900;
-	src: url("../Fonts/source-sans-variable/source-sans-variable.woff2") format("woff2-variations");
-	font-family: "Source Sans Variable";
-	font-display: block;
-}
-
-@font-face {
-	font-style: italic;
-	font-weight: 200 900;
-	src: url("../Fonts/source-sans-variable/source-sans-variable-italic.woff2") format("woff2-variations");
-	font-family: "Source Sans Variable";
+	src: url("../fonts/font-variable.woff2") format("woff2-variations");
+	font-family: "Main Font";
 	font-display: block;
 }
 
@@ -33,24 +25,8 @@
 /* #region ############################################### variables ############################################### */
 :where(:root) {
 	/* main ci colors */
-	--color__ci-pink--rgb_raw: 232 50 109;
-	--color__ci-pink--rgb: rgb(var(--color__ci-pink--rgb_raw));
-	--color__ci-green--rgb_raw: 116 186 89;
-	--color__ci-green--rgb: rgb(var(--color__ci-green--rgb_raw));
-	--color__ci-mint--rgb_raw: 191 225 215;
-	--color__ci-mint--rgb: rgb(var(--color__ci-mint--rgb_raw));
-	--color__ci-blue--rgb_raw: 58 152 204;
-	--color__ci-blue--rgb: rgb(var(--color__ci-blue--rgb_raw));
-	--color__ci-orange--rgb_raw: 247 171 100;
-	--color__ci-orange--rgb: rgb(var(--color__ci-orange--rgb_raw));
-
-	/* dark ci colors */
-	--color__ci-dark-pink--rgb_raw: 112 48 90;
-	--color__ci-dark-pink--rgb: rgb(var(--color__ci-dark-pink--rgb_raw));
-	--color__ci-dark-green--rgb_raw: 31 106 97;
-	--color__ci-dark-green--rgb: rgb(var(--color__ci-dark-green--rgb_raw));
-	--color__ci-dark-blue--rgb_raw: 20 62 100;
-	--color__ci-dark-blue--rgb: rgb(var(--color__ci-dark-blue--rgb_raw));
+	--color__ci-red--rgb_raw: 200 10 10;
+	--color__ci-red--rgb: rgb(var(--color__ci-main--rgb_raw));
 
 	/* generic colors */
 	--color__white--rgb_raw: 255 255 255;
@@ -63,12 +39,8 @@
 	--color__black--rgb: rgb(var(--color__black--rgb_raw));
 
 	/* ci variables */
-	--color__ci-main--rgb_raw: var(--color__ci-blue--rgb_raw);
-	--color__ci-main--rgb: var(--color__ci-blue--rgb);
-	--color__ci-dark--rgb_raw: var(--color__ci-dark-blue--rgb_raw);
-	--color__ci-dark--rgb: var(--color__ci-dark-blue--rgb);
-	--color__ci-alt--rgb_raw: var(--color__ci-pink--rgb_raw);
-	--color__ci-alt--rgb: var(--color__ci-pink--rgb);
+	--color__ci-main--rgb_raw: var(--color__ci-red--rgb_raw);
+	--color__ci-main--rgb: var(--color__ci-red--rgb);
 
 	/* variables */
 	--bg__color_raw: var(--color__white--rgb_raw);
@@ -87,7 +59,7 @@
 	--font__size--xl: calc(3.4rem * var(--font__size_multiplier));
 
 	/* font families */
-	--font__family--ci: "Source Sans Variable", var(--font__family--sans-serif);
+	--font__family--ci: "Main Font", var(--font__family--sans-serif);
 	--font__family--emoji: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 	--font__family--sans-serif: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans",
 		sans-serif, var(--font__family--emoji);
@@ -221,14 +193,13 @@
 }
 
 /* var(--breakpoint-xxl) => 1620px */
-
-/* @media (min-width: 1620px) {
+@media (min-width: 1620px) {
 	:root {
 		--gutter: 4.2rem;
 		--container__width: var(--container--xxl);
 		--breakpoint__width: var(--breakpoint--xxl);
 	}
-} */
+}
 
 /*
 *#
