@@ -1,4 +1,0 @@
-[submodule "dotfiles"]
-	path = dotfiles
-	url = git@github.com:adva-gmbh/dotfiles.git
-    ignore = all
