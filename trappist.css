@@ -1,3 +1,47 @@
+/* set charset */
+@charset "UTF-8";
+
+/* data scroll */
+[data-scroll-start],
+[data-scroll-end] {
+	position: relative;
+	overflow-x: hidden;
+}
+
+[data-scroll-start] > *,
+[data-scroll-end] > * {
+	overflow-x: scroll;
+	scroll-behavior: var(--scroll-behavior);
+}
+
+[data-scroll-start]::before,
+[data-scroll-end]::after {
+	position: absolute;
+	top: 0;
+	z-index: 1;
+	transition: opacity var(--transition);
+	background-image: linear-gradient(to right, rgb(var(--bg-rgb) / 100%), rgb(var(--bg-rgb) / 0%));
+	width: var(--gutter);
+	height: 100%;
+	pointer-events: none;
+	content: "";
+}
+
+[data-scroll-start]::before {
+	left: 0;
+}
+
+[data-scroll-end]::after {
+	right: 0;
+	transform: scaleX(-1);
+}
+
+[data-scroll-start="true"]::before,
+[data-scroll-end="true"]::after {
+	opacity: 0;
+}
+
+/* containers */
 .container,
 .container-fluid {
 	padding-right: calc(var(--gutter) / 2);
@@ -9,6 +53,7 @@
 	max-width: var(--container__width) !important;
 }
 
+/* grids */
 .row {
 	--gap: var(--gutter);
 
