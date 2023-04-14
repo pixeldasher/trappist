@@ -83,15 +83,12 @@
 	--num: 3;
 }
 
-[class*="row-cols-"]:not(
-		:is([class*="row-cols-md-"], [class*="row-cols-lg-"], [class*="row-cols-xl-"], [class*="row-cols-xxl-"])
-	)
-	> * {
-	flex: revert;
-}
-
 .col {
 	flex: 1;
+}
+
+:is(.row-cols-1, .row-cols-2, .row-cols-3, .row-cols-4) > * {
+	flex: revert;
 }
 
 .col-auto {
