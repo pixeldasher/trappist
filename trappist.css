@@ -55,9 +55,7 @@
 
 /* grids */
 .row {
-	--gap: var(--gutter);
-
-	gap: var(--gap);
+	gap: var(--gap, var(--gutter));
 }
 
 .row.no-gutters {
@@ -65,8 +63,8 @@
 }
 
 .row > * {
-	flex: 0 1 calc((var(--num) / 12) * (100% - ((12 / var(--num)) - 1) * var(--gap)));
-	width: calc((var(--num) / 12) * (100% - ((12 / var(--num)) - 1) * var(--gap)));
+	flex: 0 1 calc((var(--num) / 12) * (100% - ((12 / var(--num)) - 1) * var(--gap, var(--gutter))));
+	width: calc((var(--num) / 12) * (100% - ((12 / var(--num)) - 1) * var(--gap, var(--gutter))));
 }
 
 .row-cols-1 > * {
@@ -85,8 +83,11 @@
 	--num: 3;
 }
 
-.col-empty {
-	display: none;
+[class*="row-cols-"]:not(
+		:is([class*="row-cols-md-"], [class*="row-cols-lg-"], [class*="row-cols-xl-"], [class*="row-cols-xxl-"])
+	)
+	> * {
+	flex: revert;
 }
 
 .col {
@@ -98,8 +99,13 @@
 	width: auto;
 }
 
+.col-empty,
 .col-none {
 	display: none;
+}
+
+.row > :is(.col, [class*="col-"]):not(.col-none) {
+	display: revert;
 }
 
 .col-1 {
@@ -168,6 +174,10 @@
 		--num: 3;
 	}
 
+	[class*="row-cols-sm-"] > * {
+		flex: revert;
+	}
+
 	.col-sm {
 		flex: 1;
 	}
@@ -179,6 +189,10 @@
 
 	.col-sm-none {
 		display: none;
+	}
+
+	.row > [class*="col-sm"]:not(.col-sm-none) {
+		display: revert;
 	}
 
 	.col-sm-1 {
@@ -248,6 +262,10 @@
 		--num: 3;
 	}
 
+	[class*="row-cols-md-"] > * {
+		flex: revert;
+	}
+
 	.col-md {
 		flex: 1;
 	}
@@ -259,6 +277,10 @@
 
 	.col-md-none {
 		display: none;
+	}
+
+	.row > [class*="col-md"]:not(.col-md-none) {
+		display: revert;
 	}
 
 	.col-md-1 {
@@ -328,6 +350,10 @@
 		--num: 3;
 	}
 
+	[class*="row-cols-lg-"] > * {
+		flex: revert;
+	}
+
 	.col-lg {
 		flex: 1;
 	}
@@ -339,6 +365,10 @@
 
 	.col-lg-none {
 		display: none;
+	}
+
+	.row > [class*="col-lg"]:not(.col-lg-none) {
+		display: revert;
 	}
 
 	.col-lg-1 {
@@ -408,6 +438,10 @@
 		--num: 3;
 	}
 
+	[class*="row-cols-xl-"] > * {
+		flex: revert;
+	}
+
 	.col-xl {
 		flex: 1;
 	}
@@ -419,6 +453,10 @@
 
 	.col-xl-none {
 		display: none;
+	}
+
+	.row > [class*="col-xl"]:not(.col-xl-none) {
+		display: revert;
 	}
 
 	.col-xl-1 {
@@ -488,6 +526,10 @@
 		--num: 3;
 	}
 
+	[class*="row-cols-xxl-"] > * {
+		flex: revert;
+	}
+
 	.col-xxl {
 		flex: 1;
 	}
@@ -499,6 +541,10 @@
 
 	.col-xxl-none {
 		display: none;
+	}
+
+	.row > [class*="col-xxl"]:not(.col-xxl-none) {
+		display: revert;
 	}
 
 	.col-xxl-1 {
