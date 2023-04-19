@@ -6,11 +6,8 @@
 	*,
 	::before,
 	::after {
-		animation-duration: 1ms !important;
-		animation-delay: -1ms !important;
-		animation-iteration-count: 1 !important;
-		transition-delay: 0s !important;
-		transition-duration: 0s !important;
+		animation: none !important;
+		transition: none !important;
 		background-attachment: initial !important;
 		scroll-behavior: auto !important;
 	}
@@ -28,7 +25,8 @@
 	white-space: nowrap !important;
 }
 
+/* disabled elements
 :is([disabled], [aria-disabled="true"]) {
-	filter: saturate(0.5) brightness(0.5) !important;
+	filter: saturate(0.5) brightness(0.5);
 	text-decoration: none !important;
-}
+} */
